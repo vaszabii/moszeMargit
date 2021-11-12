@@ -1,0 +1,34 @@
+name: Documentation.yml
+
+on:
+  push:
+    branches:
+      - feladat3
+
+jobs:
+
+  deploy:
+    name: Deploy documentation
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: sudo apt-get install doxygen
+    - run: sudo apt-get install graphviz
+    - run: sudo apt-get -y install texlive-latex-recommended texlive-pictures texlive-latex-extra
+    - run: doxygen doxconf
+    - run: cd DOCS/latex && make
+    
+    - name: Generate artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: html-and-pdf-download
+        path: DOCS
+
+    - name: Push git subdir as branch
+      uses: s0/git-publish-subdir-action@v2.4.0
+
+      env:
+        REPO: self
+        BRANCH: documentation
+        FOLDER: DOCS/html
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

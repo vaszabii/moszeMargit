@@ -1,0 +1,26 @@
+add 3 rows
+add 4 cols
+edit a2 hello
+edit d4 teszteles program
+delete d
+edit d4 teszt
+edit a3 Asd
+edit a1 4
+add 1 rows
+edit a5 4.1
+align a1:c2 right
+edit b1 0
+delete c
+insert 1 cols before c
+edit d3  
+edit d2 543.3
+edit d4 543.4
+edit b2 asd
+sort by a
+align b2 right
+align a2 left
+edit b2 asdd
+sort by 3 desc
+swap a3 b2
+clear a1:b1
+exit

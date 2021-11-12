@@ -1,0 +1,17 @@
+name: Testing
+
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check repo content
+        uses: actions/checkout@v2
+      - run: g++ -Wall *.cpp -o main
+      - name: generate output    
+        run: |
+          ./main < "input.txt" > "output.txt"
+      - name: check output
+        run: diff output.txt goodoutput.txt
