@@ -6,12 +6,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: falken05/margitdocker
     steps:
       - name: check repo content
         uses: actions/checkout@v2
       - run: g++ -Wall *.cpp -o main
-      - name: generate output    
-        run: |
-          ./main < "input.txt" > "output.txt"
+      - name: valgrind memcheck && generate output
+        run: valgrind --leak-check=full --error-exitcode=1 ./main < "input.txt" > "output.txt"
       - name: check output
         run: diff output.txt goodoutput.txt

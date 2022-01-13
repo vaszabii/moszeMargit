@@ -1,0 +1,20 @@
+name: UnitTests
+
+on:
+  push
+ 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: falken05/margitdocker
+    steps:
+      - uses: actions/checkout@v2     
+      - name: symbolic references
+        run: ln -st /usr/lib/ /usr/src/gtest/libgtest.a && ln -st /usr/lib/ /usr/src/gtest/libgtest_main.a
+      - name: Make build environment
+        run: cmake unitTests/CMakeLists.txt
+      - name: Build
+        run: cd unitTests && make
+      - name: Run the unit tests
+        run: cd unitTests && ./runTests

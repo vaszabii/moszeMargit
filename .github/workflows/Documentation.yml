@@ -1,20 +1,17 @@
-name: Documentation.yml
+
+name: Documentation
 
 on:
-  push:
-    branches:
-      - feladat3
+  push
 
 jobs:
 
   deploy:
     name: Deploy documentation
     runs-on: ubuntu-latest
+    container: falken05/margitdocker
     steps:
-    - uses: actions/checkout@v2
-    - run: sudo apt-get install doxygen
-    - run: sudo apt-get install graphviz
-    - run: sudo apt-get -y install texlive-latex-recommended texlive-pictures texlive-latex-extra
+    - uses: actions/checkout@v2    
     - run: doxygen doxconf
     - run: cd DOCS/latex && make
     
