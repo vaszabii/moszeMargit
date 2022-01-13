@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printtable_38',['printTable',['../classSpreadsheet.html#a7e0706caa3865f2addf094a046d1dac5',1,'Spreadsheet']]]
+  ['input_66',['Input',['../Tablazatkezelo_8cpp.html#a725cb9a9b562d239bfb03cd8fbae4ef6',1,'Tablazatkezelo.cpp']]]
 ];

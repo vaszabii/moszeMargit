@@ -1,0 +1,26 @@
+<map id="Input" name="Input">
+<area shape="rect" id="node1" title="A függvény kezeli a parancssorból kapott utasításokat." alt="" coords="5,436,60,463"/>
+<area shape="rect" id="node2" href="$classSpreadsheet.html#a97c84b754d3c27bf4ed10e432f954dc4" title="Egy oszlop hozzáadása." alt="" coords="133,5,318,32"/>
+<area shape="rect" id="node3" href="$classSpreadsheet.html#a692fe83467d1b6fa4cfa23b59255a926" title="Egy sor hozzáadása." alt="" coords="144,56,307,83"/>
+<area shape="rect" id="node4" href="$classSpreadsheet.html#ad8baa1f93eca20f1f7fb57e7b48315ce" title="SVG ábra elkészítése." alt="" coords="142,107,309,133"/>
+<area shape="rect" id="node7" href="$classSpreadsheet.html#a51e852e06e0bed29fe628a05f597e0ac" title="Cellaigazítás megváltoztatása." alt="" coords="130,157,321,184"/>
+<area shape="rect" id="node8" href="$classSpreadsheet.html#a0b802717f81c15ac97ce1a433617038e" title="Egy cella szerkesztése." alt="" coords="145,208,306,235"/>
+<area shape="rect" id="node9" href="$classSpreadsheet.html#a5e5d6f5bca66e83ecd1baa7e6fa7a1d6" title="Oszlopok számának a meghatározása." alt="" coords="109,259,342,285"/>
+<area shape="rect" id="node10" href="$classSpreadsheet.html#a4fd8923d4ac43757bcf8a86284448224" title="Sorok számának a meghatározása." alt="" coords="120,309,331,336"/>
+<area shape="rect" id="node11" href="$classSpreadsheet.html#a609d4b18f9bba57fb360efd96bb0ddaf" title="A range műveletek paraméterének helyes sorrenbe állítása." alt="" coords="108,360,343,387"/>
+<area shape="rect" id="node12" href="$classSpreadsheet.html#a7e0706caa3865f2addf094a046d1dac5" title=" " alt="" coords="138,411,313,437"/>
+<area shape="rect" id="node13" href="$classSpreadsheet.html#a5534c018e841ea83d3ca7409e5fe3fcb" title="Cellaigazítás az összes kijelölt cellán ." alt="" coords="135,461,316,488"/>
+<area shape="rect" id="node14" href="$classSpreadsheet.html#adf39ed55d29dd2deefbdf650d1d515e5" title="Tartalomtörlés az összes kijelölt cellán." alt="" coords="134,512,317,539"/>
+<area shape="rect" id="node15" href="$classSpreadsheet.html#a26404c2a8d1382a247c7f55f4b0b560d" title="Egy oszlop eltávolátasa." alt="" coords="120,563,331,589"/>
+<area shape="rect" id="node16" href="$classSpreadsheet.html#a15e1857fbe7226f5a2a32ce4d7278206" title="Egy sor eltávolítása." alt="" coords="131,613,320,640"/>
+<area shape="rect" id="node17" href="$classSpreadsheet.html#ae86a5ebc7ab6397e73d9bbe8f82b7cef" title="Táblázat rendezése oszlop/sor szerint." alt="" coords="149,664,302,691"/>
+<area shape="rect" id="node21" href="$classSpreadsheet.html#a480a6993dbc7ac6ca90cbc5c7a692cd6" title="Két cella adatának megcserélése." alt="" coords="153,715,298,741"/>
+<area shape="rect" id="node22" href="$classSpreadsheet.html#a131206f1b402a77439818c4bebc6d444" title="Táblázat kiírása fájlba." alt="" coords="118,765,333,792"/>
+<area shape="rect" id="node23" href="$classSpreadsheet.html#af9b1659c3282fe41a7f50070a51dfc9a" title="Ellenőrzi, hogy létezik&#45;e olyan oszlop, ha igen akkor visszaadja táblázat oszlopindexét." alt="" coords="132,816,319,843"/>
+<area shape="rect" id="node24" href="$classSpreadsheet.html#a72ac8167c01cb7808046175dbf558c18" title="Ellenőrzi, hogy létezik&#45;e olyan sor, ha igen akkor visszaadja táblázat sorindexét." alt="" coords="121,867,330,893"/>
+<area shape="rect" id="node5" href="$classBarchartMaker.html#a776526707b6e4c461752c0b319fec46e" title="A csoportosított oszlopdiagram elkészítése." alt="" coords="391,107,584,133"/>
+<area shape="rect" id="node6" href="$Tablazat_8cpp.html#ad9af05de4615cb6cb9e4fd9d3e084f9a" title=" " alt="" coords="632,107,724,133"/>
+<area shape="rect" id="node18" href="$Tablazat_8cpp.html#a6d7235f50136c99674efb4d66ad36216" title="Ez a függvény rendezi az oszlopokat növekvő sorrendbe." alt="" coords="419,613,556,640"/>
+<area shape="rect" id="node19" href="$Tablazat_8cpp.html#ab122436ab8c471bd48e860c318e937f5" title="Ez a függvény rendezi az oszlopokat csökkenő sorrendbe." alt="" coords="414,664,561,691"/>
+<area shape="rect" id="node20" href="$Tablazat_8cpp.html#a73ab57b8eaf821b0ecabe96a9c3feedf" title="A mátrix transzponálása a sorok rendezése miatt." alt="" coords="444,715,531,741"/>
+</map>

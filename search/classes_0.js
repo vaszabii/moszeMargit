@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['barchartmaker_25',['BarchartMaker',['../classBarchartMaker.html',1,'']]]
+  ['barchartmaker_42',['BarchartMaker',['../classBarchartMaker.html',1,'']]]
 ];

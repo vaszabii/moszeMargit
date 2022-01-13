@@ -1,0 +1,6 @@
+<map id="Spreadsheet::sortBy" name="Spreadsheet::sortBy">
+<area shape="rect" id="node1" title="Táblázat rendezése oszlop/sor szerint." alt="" coords="5,56,159,83"/>
+<area shape="rect" id="node2" href="$Tablazat_8cpp.html#a6d7235f50136c99674efb4d66ad36216" title="Ez a függvény rendezi az oszlopokat növekvő sorrendbe." alt="" coords="211,5,349,32"/>
+<area shape="rect" id="node3" href="$Tablazat_8cpp.html#ab122436ab8c471bd48e860c318e937f5" title="Ez a függvény rendezi az oszlopokat csökkenő sorrendbe." alt="" coords="207,56,353,83"/>
+<area shape="rect" id="node4" href="$Tablazat_8cpp.html#a73ab57b8eaf821b0ecabe96a9c3feedf" title="A mátrix transzponálása a sorok rendezése miatt." alt="" coords="237,107,323,133"/>
+</map>

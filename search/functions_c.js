@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ynumbercheck_49',['ynumberCheck',['../classSpreadsheet.html#a72ac8167c01cb7808046175dbf558c18',1,'Spreadsheet']]]
+  ['transpose_80',['transpose',['../Tablazat_8cpp.html#a73ab57b8eaf821b0ecabe96a9c3feedf',1,'Tablazat.cpp']]]
 ];

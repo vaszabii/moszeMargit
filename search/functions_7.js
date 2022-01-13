@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['rangealign_39',['rangeAlign',['../classSpreadsheet.html#a5534c018e841ea83d3ca7409e5fe3fcb',1,'Spreadsheet']]],
-  ['rangeclear_40',['rangeClear',['../classSpreadsheet.html#adf39ed55d29dd2deefbdf650d1d515e5',1,'Spreadsheet']]],
-  ['removecolumn_41',['removeColumn',['../classSpreadsheet.html#a26404c2a8d1382a247c7f55f4b0b560d',1,'Spreadsheet']]],
-  ['removerow_42',['removeRow',['../classSpreadsheet.html#a15e1857fbe7226f5a2a32ce4d7278206',1,'Spreadsheet']]]
+  ['main_67',['main',['../Tablazatkezelo_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'Tablazatkezelo.cpp']]]
 ];
