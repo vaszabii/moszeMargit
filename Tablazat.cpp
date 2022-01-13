@@ -10,14 +10,19 @@
 */
 
 #include "Tablazat.h"
+#include "BarchartMaker.h"
 #include <fstream>
 #include <algorithm>
 #include <iomanip>
-Spreadsheet::Spreadsheet() {
+#include <cmath>
+#include <sstream>
+using namespace std;
+Spreadsheet::Spreadsheet(std::string tableName) {
 	addRow();
+	spreadsheetname = tableName;
 }
 
-Spreadsheet::Spreadsheet(std::string filename, char separator) {
+Spreadsheet::Spreadsheet(std::string filename, char separator, std::string tableName) {
 	std::ifstream myfile;
 	myfile.open(filename);
 	if (myfile.is_open())
@@ -79,12 +84,25 @@ Spreadsheet::Spreadsheet(std::string filename, char separator) {
 		}
 		tableAlign = tempTableAlign;
 		tableAggregate = tempTableAggregate;
+		spreadsheetname = tableName;
 	}
 	else
 	{
-		std::cout << "Nem sikerult megnyitni a fajlt. Alap tablazat betoltese..." << std::endl;
-		std::this_thread::sleep_for(std::chrono::seconds(5));
-		addRow();
+		std::string answerStr;
+		std::cout << "Nem sikerult megnyitni a fajlt. Szeretne betolteni az alap, ures tablazat? (Y/N) ";
+		std::getline(std::cin, answerStr);
+		char answer = toupper(answerStr[0]);
+		if (answer == 'Y')
+		{
+			std::cout << "Alap tablazat betoltese....";
+			std::this_thread::sleep_for(std::chrono::seconds(5));
+			addRow();
+			spreadsheetname = "Table";
+		}
+		else
+		{
+			throw std::runtime_error("Nem sikerult megnyitni a fajlt.");
+		}
 	}
 }
 
@@ -160,20 +178,20 @@ void Spreadsheet::swap(int x, int y, int m, int n) {
 }
 
 void Spreadsheet::rangeAlign(int x, int y, int m, int n, std::string align) {
-	for (y; y <= n; y++)
+	for (;y <= n; y++)
 	{
 		int a = x;
-		for (a; a <= m; a++)
+		for (;a <= m; a++)
 		{
 			changeAlign(a, y, align);
 		}
 	}
 }
 void Spreadsheet::rangeClear(int x, int y, int m, int n) {
-	for (y; y <= n; y++)
+	for (; y <= n; y++)
 	{
 		int a = x;
-		for (a; a <= m; a++)
+		for (; a <= m; a++)
 		{
 			clearCell(a, y);
 		}
@@ -209,9 +227,9 @@ bool Spreadsheet::cycle(int x, int y, int m, int n) {
 	const std::regex max(R"((?:=)(\bMAX\b|\bmax\b)(?:\()([a-zA-Z])([0-9]+)(?:\b:\b)([a-zA-Z])([0-9]+)(?:\)))");
 	orderRangeParams(x, m);
 	orderRangeParams(y, n);
-	for (y; y <= n; y++) {
+	for (; y <= n; y++) {
 		int a = x;
-		for (a; a <= m; a++) {
+		for (; a <= m; a++) {
 			std::smatch matchCycle;
 			if (tableAggregate[y][a].second)
 			{
@@ -240,6 +258,7 @@ void Spreadsheet::updateAggregateTable() {
 	const std::regex avg(R"((?:=)(\bAVG\b|\bavg\b)(?:\()([a-zA-Z])([0-9]+)(?:\b:\b)([a-zA-Z])([0-9]+)(?:\)))");
 	const std::regex min(R"((?:=)(\bMIN\b|\bmin\b)(?:\()([a-zA-Z])([0-9]+)(?:\b:\b)([a-zA-Z])([0-9]+)(?:\)))");
 	const std::regex max(R"((?:=)(\bMAX\b|\bmax\b)(?:\()([a-zA-Z])([0-9]+)(?:\b:\b)([a-zA-Z])([0-9]+)(?:\)))");
+	const std::regex is_it_pure_number(R"(^([+-]?(?:[\d]+\.?|[\d]*\.[\d]+))$)");
 	std::string aggFv, aggValue;
 	int x, y, m, n, counter, a;
 	bool firstMin, isCycle;
@@ -287,7 +306,14 @@ void Spreadsheet::updateAggregateTable() {
 								}
 								else
 								{
-									helper = std::stod(table[y][a]);
+									if (std::regex_match(table[y][a], is_it_pure_number))
+									{
+										helper = std::stod(table[y][a]);
+									}
+									else
+									{
+										throw std::invalid_argument("Cant convert string.");
+									}
 								}
 								if (!isCycle)
 								{
@@ -320,7 +346,10 @@ void Spreadsheet::updateAggregateTable() {
 									}
 								}
 							}
-							catch (const std::exception&) {
+							catch (const std::invalid_argument&) {
+								//Cella figyelmen kívül hagyása
+							}
+							catch (const std::out_of_range&) {
 								//Cella figyelmen kívül hagyása
 							}
 							if (!isCycle)
@@ -457,7 +486,7 @@ void Spreadsheet::printTable() {
 			size_t whitespaces = cellsMaxLength[y] - 1;
 			if (table[i][y] != "")
 			{
-				if (tableAggregate[i][y].first != emptyCell)
+				if (tableAggregate[i][y].first != emptyCell)// Aggregáló táblából kiíratás
 				{
 					content = tableAggregate[i][y].first;
 					aggregate = true;
@@ -518,7 +547,6 @@ void Spreadsheet::printTable() {
 		}
 		std::cout << std::endl;
 	}
-
 	delete[] cellsMaxLength;
 }
 
@@ -566,7 +594,7 @@ size_t Spreadsheet::getRowCounter() {
 	\param by oszlopindex
 */
 void sortByColumnAsc(std::vector<std::vector<std::string>>& table, int& by) {
-	const std::regex is_it_number(R"((\d*\.?\d*))");
+	const std::regex is_it_number(R"(^([+-]?(?:[\d]+\.?|[\d]*\.[\d]+))$)");
 	std::sort(table.begin(), table.end(), [&by, &is_it_number](const std::vector<std::string>& item1, const std::vector<std::string>& item2)
 		{
 			if (item1[by].length() != 0 && std::regex_match(item1[by], is_it_number)) {
@@ -588,7 +616,7 @@ void sortByColumnAsc(std::vector<std::vector<std::string>>& table, int& by) {
 			else {
 				if (item2[by].length() != 0 && std::regex_match(item2[by], is_it_number)) {
 					try {
-						double num2 = std::stod(item2[by]);
+						std::stod(item2[by]);
 						return true;
 					}
 					catch (const std::exception&) {}
@@ -607,7 +635,7 @@ void sortByColumnAsc(std::vector<std::vector<std::string>>& table, int& by) {
 	\param by oszlopindex
 */
 void sortByColumnDesc(std::vector<std::vector<std::string>>& table, int& by) {
-	const std::regex is_it_number(R"((\d*\.?\d*))");
+	const std::regex is_it_number(R"(^([+-]?(?:[\d]+\.?|[\d]*\.[\d]+))$)");
 	std::sort(table.begin(), table.end(), [&by, &is_it_number](const std::vector<std::string>& item1, const std::vector<std::string>& item2) {
 		if (item1[by].length() != 0 && std::regex_match(item1[by], is_it_number)) {
 			try {
@@ -628,7 +656,7 @@ void sortByColumnDesc(std::vector<std::vector<std::string>>& table, int& by) {
 		else {
 			if (item2[by].length() != 0 && std::regex_match(item2[by], is_it_number)) {
 				try {
-					double num2 = std::stod(item2[by]);
+					std::stod(item2[by]);
 					return false;
 				}
 				catch (const std::exception&) {}
@@ -641,7 +669,7 @@ void sortByColumnDesc(std::vector<std::vector<std::string>>& table, int& by) {
 		});
 }
 
-//! A táblázatot transzopánlja a sorok rendezése miatt
+//! A mátrix transzponálása a sorok rendezése miatt
 /*!
 	\param table a táblázat
 	\return a transzponált táblázat
@@ -732,7 +760,16 @@ void Spreadsheet::orderRangeParams(int& a, int& b) {
 		b = c;
 	}
 }
-std::string Spreadsheet::get(int row, int column) {
+
+std::string Spreadsheet::getName() {
+	return spreadsheetname;
+}
+
+void Spreadsheet::setName(std::string tableName) {
+	spreadsheetname = tableName;
+}
+
+std::string Spreadsheet::get(size_t row, size_t column) {
 	std::string content = "";
 	if (row >= 0 && row <= table.size() && column >= 0 && column <= table[0].size())
 	{
@@ -748,3 +785,46 @@ std::string Spreadsheet::get(int row, int column) {
 	return content;
 
 }
+
+std::stringstream headString() {
+	std::stringstream h;
+	h << "<head> <meta charset=\"utf-8\"><style>" <<
+		" body {font: 10px sans-serif;}" <<
+		".axis path," <<
+		".axis line {fill: none; stroke: #000;shape-rendering: crispEdges;}" <<
+		".bar { fill: steelblue;}" <<
+		"</style></head>";
+	return h;
+}
+void Spreadsheet::barChart(int x, int y, int m, int n, std::string filename) {
+	const std::regex is_it_pure_number(R"(^([+-]?(?:[\d]+\.?|[\d]*\.[\d]+))$)");
+	std::vector<std::vector<string>> chart;
+	std::string cellValue;
+	int j = y;
+	for (; y <= n; y++) // Rangen bellüli értékek egy külön vektorba gyűjtése
+	{
+		std::vector<string> chartrow;
+		int a = x;
+		for (; a <= m; a++)
+		{
+
+			if (std::regex_match(table[y][a], is_it_pure_number) || j == y || a == x)
+			{
+				cellValue = table[y][a];
+			}
+			else
+			{
+				cellValue = "0";
+			}
+
+			chartrow.push_back(cellValue);
+		}
+		chart.push_back(chartrow);
+	}
+
+
+	BarchartMaker Barchart(chart, filename);
+	Barchart.createSVG();
+}
+
+

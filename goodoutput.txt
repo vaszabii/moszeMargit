@@ -5,6 +5,8 @@ Tablazatkezelo program. A help parancs megadasaval megjelennek a lehetseges para
 1| |
 ----
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A|
 ----
@@ -16,6 +18,8 @@ Irjon be egy parancsot:
 ----
 4| |
 ----
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A|B|C|D|E|
@@ -29,6 +33,8 @@ Irjon be egy parancsot:
 4| | | | | |
 ------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B|C|D|E|
 ----------------
@@ -40,6 +46,8 @@ Irjon be egy parancsot:
 ----------------
 4|     | | | | |
 ----------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B|C|D                |E|
@@ -53,6 +61,8 @@ Irjon be egy parancsot:
 4|     | | |teszteles program| |
 --------------------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B|C|D|
 --------------
@@ -64,6 +74,8 @@ Irjon be egy parancsot:
 --------------
 4|     | | | |
 --------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B|C|D    |
@@ -77,6 +89,8 @@ Irjon be egy parancsot:
 4|     | | |teszt|
 ------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B|C|D    |
 ------------------
@@ -89,6 +103,8 @@ Irjon be egy parancsot:
 4|     | | |teszt|
 ------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B|C|D    |
 ------------------
@@ -100,6 +116,8 @@ Irjon be egy parancsot:
 ------------------
 4|     | | |teszt|
 ------------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B|C|D    |
@@ -115,6 +133,8 @@ Irjon be egy parancsot:
 5|     | | |     |
 ------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B|C|D    |
 ------------------
@@ -128,6 +148,8 @@ Irjon be egy parancsot:
 ------------------
 5|4.1  | | |     |
 ------------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B|C|D    |
@@ -143,6 +165,8 @@ Irjon be egy parancsot:
 5|4.1  | | |     |
 ------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B|C|D    |
 ------------------
@@ -156,6 +180,8 @@ Irjon be egy parancsot:
 ------------------
 5|4.1  | | |     |
 ------------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B|C    |
@@ -171,19 +197,7 @@ Irjon be egy parancsot:
 5|4.1  | |     |
 ----------------
 
-Irjon be egy parancsot:
- |A    |B|C|D    |
-------------------
-1|    4|0| |     |
-------------------
-2|hello| | |     |
-------------------
-3|Asd  | | |     |
-------------------
-4|     | | |teszt|
-------------------
-5|4.1  | | |     |
-------------------
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B|C|D    |
@@ -198,6 +212,24 @@ Irjon be egy parancsot:
 ------------------
 5|4.1  | | |     |
 ------------------
+
+0*: Table 
+
+Irjon be egy parancsot:
+ |A    |B|C|D    |
+------------------
+1|    4|0| |     |
+------------------
+2|hello| | |     |
+------------------
+3|Asd  | | |     |
+------------------
+4|     | | |teszt|
+------------------
+5|4.1  | | |     |
+------------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B|C|D    |
@@ -212,6 +244,8 @@ Irjon be egy parancsot:
 ------------------
 5|4.1  | | |     |
 ------------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B|C|D    |
@@ -227,6 +261,8 @@ Irjon be egy parancsot:
 5|4.1  | | |     |
 ------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B  |C|D    |
 --------------------
@@ -241,19 +277,7 @@ Irjon be egy parancsot:
 5|4.1  |   | |     |
 --------------------
 
-Irjon be egy parancsot:
- |A    |B  |C|D    |
---------------------
-1|     |   | |543.4|
---------------------
-2|  Asd|   | |     |
---------------------
-3|hello|asd| |543.3|
---------------------
-4|4    |0  | |     |
---------------------
-5|4.1  |   | |     |
---------------------
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B  |C|D    |
@@ -268,6 +292,24 @@ Irjon be egy parancsot:
 --------------------
 5|4.1  |   | |     |
 --------------------
+
+0*: Table 
+
+Irjon be egy parancsot:
+ |A    |B  |C|D    |
+--------------------
+1|     |   | |543.4|
+--------------------
+2|  Asd|   | |     |
+--------------------
+3|hello|asd| |543.3|
+--------------------
+4|4    |0  | |     |
+--------------------
+5|4.1  |   | |     |
+--------------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B  |C|D    |
@@ -283,6 +325,8 @@ Irjon be egy parancsot:
 5|4.1  |   | |     |
 --------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B   |C|D    |
 ---------------------
@@ -296,6 +340,8 @@ Irjon be egy parancsot:
 ---------------------
 5|4.1  |    | |     |
 ---------------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A    |B    |C   |D|
@@ -311,6 +357,8 @@ Irjon be egy parancsot:
 5|     |4.1  |    | |
 ---------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
  |A    |B    |C   |D|
 ---------------------
@@ -324,6 +372,8 @@ Irjon be egy parancsot:
 ---------------------
 5|     |4.1  |    | |
 ---------------------
+
+0*: Table 
 
 Irjon be egy parancsot:
  |A  |B    |C   |D|
@@ -339,4 +389,167 @@ Irjon be egy parancsot:
 5|   |4.1  |    | |
 -------------------
 
+0*: Table 
+
 Irjon be egy parancsot:
+ |A      |B    |C   |D|
+-----------------------
+1|183.800|     |    | |
+-----------------------
+2|       |543.3|asdd| |
+-----------------------
+3|Asd    |hello|asd | |
+-----------------------
+4|       |4    |0   | |
+-----------------------
+5|       |4.1  |    | |
+-----------------------
+
+0*: Table 
+
+Irjon be egy parancsot:
+ |A      |B    |C   |D|
+-----------------------
+1|183.800|0.000|    | |
+-----------------------
+2|       |543.3|asdd| |
+-----------------------
+3|Asd    |hello|asd | |
+-----------------------
+4|       |4    |0   | |
+-----------------------
+5|       |4.1  |    | |
+-----------------------
+
+0*: Table 
+
+Irjon be egy parancsot:
+ |A      |B    |C   |
+---------------------
+1|183.800|0.000|    |
+---------------------
+2|       |543.3|asdd|
+---------------------
+3|Asd    |hello|asd |
+---------------------
+4|       |4    |0   |
+---------------------
+5|       |4.1  |    |
+---------------------
+
+0*: Table 
+
+Irjon be egy parancsot:
+ |A      |B    |C   |
+---------------------
+1|183.800|0.000|    |
+---------------------
+2|       |543.3|asdd|
+---------------------
+3|Asd    |hello|asd |
+---------------------
+4|       |4    |0   |
+---------------------
+5|       |4.1  |    |
+---------------------
+
+0*: MemTest 
+
+Irjon be egy parancsot:
+ |A|
+----
+1| |
+----
+
+0: MemTest 1*: NewTestTable 
+
+Irjon be egy parancsot:
+ |A|B|C|D|E|
+------------
+1| | | | | |
+------------
+
+0: MemTest 1*: NewTestTable 
+
+Irjon be egy parancsot:
+ |A      |B    |C   |
+---------------------
+1|183.800|0.000|    |
+---------------------
+2|       |543.3|asdd|
+---------------------
+3|Asd    |hello|asd |
+---------------------
+4|       |4    |0   |
+---------------------
+5|       |4.1  |    |
+---------------------
+
+0*: MemTest 1: NewTestTable 
+
+Irjon be egy parancsot:
+ |A      |B    |C   |D|
+-----------------------
+1|183.800|0.000|    | |
+-----------------------
+2|       |543.3|asdd| |
+-----------------------
+3|Asd    |hello|asd | |
+-----------------------
+4|       |4    |0   | |
+-----------------------
+5|       |4.1  |    | |
+-----------------------
+
+0*: MemTest 1: NewTestTable 
+
+Irjon be egy parancsot:
+ |A|
+----
+1| |
+----
+
+0: MemTest 1: NewTestTable 2*: DeleteThis 
+
+Irjon be egy parancsot:
+ |A   |
+-------
+1|test|
+-------
+
+0: MemTest 1: NewTestTable 2*: DeleteThis 
+
+Irjon be egy parancsot:
+ |A|B|C|D|E|
+------------
+1| | | | | |
+------------
+
+0: MemTest 1*: NewTestTable 2: DeleteThis 
+
+Irjon be egy parancsot:
+ |A      |B    |C   |D|
+-----------------------
+1|183.800|0.000|    | |
+-----------------------
+2|       |543.3|asdd| |
+-----------------------
+3|Asd    |hello|asd | |
+-----------------------
+4|       |4    |0   | |
+-----------------------
+5|       |4.1  |    | |
+-----------------------
+
+0*: MemTest 1: DeleteThis 
+
+Irjon be egy parancsot:
+ |A   |
+-------
+1|test|
+-------
+
+0*: DeleteThis 
+
+Irjon be egy parancsot:Az osszes tabla bezarodott. Kilepes a programbol...
+

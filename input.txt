@@ -23,4 +23,17 @@ edit b2 asdd
 sort by 3 desc
 swap a3 b2
 clear a1:b1
-exit
+edit a1 =avg(b2:b5)
+edit b1 =min(b2:c4)
+delete d
+rename 0 MemTest
+new sheet NewTestTable
+add 4 cols
+switch 0
+add 1 cols
+new sheet DeleteThis
+edit a1 test
+switch 1
+close 1
+close 0
+close 0

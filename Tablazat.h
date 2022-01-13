@@ -29,15 +29,22 @@ private:
 	std::vector<std::vector<std::string>> table; ///< Táblázat tartalmának tárolása.
 	std::vector<std::vector<std::string>> tableAlign; ///< Cellaformázás tárolása.
 	std::vector<std::vector<std::pair<std::string, bool>>> tableAggregate;  ///< Aggregátor fv.-k eredményének tárolása.
+	std::string spreadsheetname;
 public:
 	//!konstruktor
-	Spreadsheet();
-	//!Paraméterezett konstruktor, az argumentumként kapott CSV táblázatot letárol.
+	Spreadsheet() {}
+	//!Paraméterezett konstruktor, az argumentumként kapott név lesz a táblázat neve.
+	/*!
+	\param tableName a tábla neve
+	*/
+	Spreadsheet(std::string tableName);
+	//!Paraméterezett konstruktor, az argumentumként kapott CSV táblázatot letárol és beállítja a tábla nevét.
 	/*!
 	\param filename a fájl neve
 	\param separator a szeparátor karaktere
+	\param tableName a tábla neve
 	*/
-	Spreadsheet(std::string filename, char separator);
+	Spreadsheet(std::string filename, char separator, std::string tableName);
 	/*!
 	\param amount a mennyiség, amit hozzá kívánunk adni
 	*/
@@ -80,7 +87,7 @@ public:
 	*/
 	void sortBy(int by, bool is_it_row, std::string direction); ///< Táblázat rendezése oszlop/sor szerint.
 	/*!
-		\param yPar Az oszlop indexe
+		\param xPar Az oszlop indexe
 	*/
 	int xcharCheck(std::string xPar); ///< Ellenőrzi, hogy létezik-e olyan oszlop, ha igen akkor visszaadja táblázat oszlopindexét.
 	/*!
@@ -89,6 +96,15 @@ public:
 	int ynumberCheck(std::string yPar); ///< Ellenőrzi, hogy létezik-e olyan sor, ha igen akkor visszaadja táblázat sorindexét.
 	void orderRangeParams(int& a, int& b); ///< A range műveletek paraméterének helyes sorrenbe állítása.
 	void updateAggregateTable(); ///< Aggregátor fv.-k vektorának frissítése a sima táblázat kiíratásakor.
-	bool cycle(int x, int y, int m, int n);
-	std::string get(int row, int column); ///< A kiírandó táblázat egy elemét adja vissza (teszteléshez szükséges)
+	bool cycle(int x, int y, int m, int n); ///< Körkörös hivatkozás ellenőrzése.
+	std::string get(size_t row, size_t column); ///< A kiírandó táblázat egy elemét adja vissza (teszteléshez szükséges)
+	/*!
+		\param x Egyik elem oszlop indexe
+		\param y Egyik elem sor indexe
+		\param m Másik elem oszlop indexe
+		\param n Másik elem sor indexe
+	*/
+	void barChart(int x, int y, int m, int n, std::string filename); ///< SVG ábra elkészítése
+	std::string getName(); ///< A táblázat nevének lekérése.
+	void setName(std::string name); ///< A táblázat nevének átírása.
 };

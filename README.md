@@ -36,5 +36,3 @@ A feladatok megjelenésekor készülni fog 1-1 PR, így aki értesítést szeret
 
 A feladatokkal kapcsolatos kérdéseket is a template repóban, issue létrehozásával lehet feltenni.
 Saját kódra vonatkozó kérdéseket pedig a csapat repójának Feedback PR-jában vagy az adott feladathoz már létrehozott PR-ban.
-# moszeMargit
-# moszeMargit
